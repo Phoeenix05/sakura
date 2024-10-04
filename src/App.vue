@@ -1,27 +1,47 @@
 <script setup lang="ts">
-import ItemCardRegular from './components/ItemCardRegular.vue'
-import NavBar from './components/NavBar.vue'
+import HelloWorld from './components/HelloWorld.vue'
+import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <template>
-  <NavBar />
-  <div>
-    <ItemCardRegular
-      v-for="_ in 10"
-      v-bind:key="_"
-      source_url="_"
-      sid="_"
-      title="Eminence in Shadow"
-      thumbnail="https://mangadex.org/covers/77bee52c-d2d6-44ad-a33a-1734c1fe696a/143ca3b0-a980-4d01-bec3-7404f01d377d.jpg.512.jpg"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    />
-  </div>
+  <header>
+    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+
+    <div class="wrapper">
+      <HelloWorld msg="You did it!" />
+    </div>
+  </header>
+
+  <main>
+    <TheWelcome />
+  </main>
 </template>
 
-<style scoped lang="less">
-div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+<style scoped>
+header {
+  line-height: 1.5;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+@media (min-width: 1024px) {
+  header {
+    display: flex;
+    place-items: center;
+    padding-right: calc(var(--section-gap) / 2);
+  }
+
+  .logo {
+    margin: 0 2rem 0 0;
+  }
+
+  header .wrapper {
+    display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+  }
 }
 </style>
